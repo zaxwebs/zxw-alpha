@@ -1,5 +1,5 @@
 // UTILS
-@mixin bg-cover($path: false, $size: 'cover', $position: 'center') {
+@mixin bg-cover($path: false, $size: cover, $position: center center) {
 	@if $path {
 		background-image: url($path);
 	}
@@ -126,6 +126,7 @@ section {
 	section#hero {
 		min-height: 65vh;
 	}
+
 	section#highlights {
 		.highlight-img-holder {
 			@include bg-cover('../images/highlights/bg.png');
@@ -135,6 +136,7 @@ section {
 			}
 		}
 	}
+
 	section#pricing {
 		@extend .bg-secondary;
 		background-image: url('../images/cubes.svg');
@@ -147,7 +149,7 @@ section {
 			i {
 				@extend .py-a;
 				color: $color-h;
-				font-size: 3rem;
+				font-size: 2rem;
 			}
 
 			&:hover {
@@ -165,6 +167,41 @@ section {
 			small {
 				color: $color-h;
 				margin-bottom: 0.8rem;
+			}
+		}
+	}
+
+	section#testimonials {
+		.testimonial {
+			@extend .p-3, .m-2, .mt-3;
+			box-shadow: 0 3px 8px 8px $color-i;
+			height: calc(100% - 1.5rem);
+
+			.profile-image-holder {
+				@extend .mb-3;
+				margin-top: -2rem;
+				width: 60px;
+				height: 60px;
+				background-color: $primary;
+
+				img {
+					@extend .img-fluid;
+				}
+			}
+
+			.content {
+				display: flex;
+				height: 80%;
+				flex-direction: column;
+				justify-content: space-between;
+
+				p {
+					@extend .mb-2;
+				}
+
+				h5 {
+					@extend .mb-0;
+				}
 			}
 		}
 	}
