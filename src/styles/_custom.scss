@@ -1,8 +1,5 @@
-// BASE
-html {
-	font-size: $font-size-root;
-}
 // UTILS
+
 .flex-xy {
 	display: flex;
 	justify-content: center;
@@ -14,13 +11,151 @@ html {
 	align-items: center;
 }
 
-.py-a {
-	@extend .py-5;
+.flex-text-x {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
 }
+
+.pb-a {
+	padding-bottom: $spacer;
+}
+
+.py-a {
+	padding-top: $spacer;
+	padding-bottom: $spacer;
+}
+
+.py-b {
+	padding-top: $spacer * 2;
+	padding-bottom: $spacer * 2;
+}
+
+.py-c {
+	padding-top: $spacer * 3;
+	padding-bottom: $spacer * 3;
+}
+
+.py-d {
+	padding-top: $spacer * 4;
+	padding-bottom: $spacer * 4;
+}
+
+.py-e {
+	padding-top: $spacer * 5;
+	padding-bottom: $spacer * 5;
+}
+
+.mw-lg {
+	max-width: 800px;
+}
+
+.row-md-reverse {
+	@include media-breakpoint-up(md) {
+		flex-direction: row-reverse;
+	}
+}
+
+.animated-gradient-bg {
+	background: linear-gradient(-45deg, $color-g, $color-d, $color-e, $color-f);
+	background-size: 400% 400%;
+	animation: animated-gradient 7.5s ease alternate infinite;
+}
+
+.bg-secondary {
+	color: $color-h;
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: $white;
+	}
+}
+
+.bg-white {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: $secondary;
+	}
+	color: $body-color;
+}
+// BASE
+* {
+	position: relative;
+}
+
+html {
+	font-size: $font-size-root;
+	scroll-behavior: smooth;
+}
+
+section {
+	@extend .py-d;
+}
+
 // COMPONENTS
 .btn {
 	text-transform: uppercase;
 }
+
+.btn-animated {
+	@extend .text-white, .animated-gradient-bg;
+}
+
+.btn-d {
+	background-color: $color-d;
+}
 // LAYOUT
 
 // PAGE(s)
+#page-home {
+	section#hero {
+		min-height: 65vh;
+	}
+	section#pricing {
+		@extend .bg-secondary;
+
+		.pricing-factor {
+			@extend .bg-white, .p-2, .flex-text-x;
+			height: 100%;
+
+			i {
+				@extend .py-a;
+				color: $color-h;
+				font-size: 3rem;
+			}
+
+			&:hover {
+				i {
+					color: $primary;
+				}
+			}
+
+			p {
+				margin-bottom: 0.5rem;
+			}
+
+			small {
+				color: $color-h;
+				margin-bottom: 0.8rem;
+			}
+		}
+	}
+}
+
+// ANIMATIONS
+@keyframes animated-gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}

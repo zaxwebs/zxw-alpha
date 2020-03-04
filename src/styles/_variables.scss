@@ -2,12 +2,20 @@
 $color-a: #8e79fc;
 $color-b: #2b2b51;
 $color-c: #58678c;
-$color-d: #ff88e4;
-$color-e: #9eccfe;
-$color-d: #0fe2c1;
+$color-d: #e73c7e;
+$color-e: #23a6d5;
+$color-f: #23d5ab;
+$color-g: #ee7752;
+$color-h: #95a0bc;
 
 $primary: $color-a;
 $secondary: $color-b;
+
+$theme-colors: (
+	'primary': $primary,
+	'secondary': $secondary,
+	'd': $color-d
+);
 
 // typography
 $headings-color: $secondary;
