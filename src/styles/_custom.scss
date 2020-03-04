@@ -121,6 +121,7 @@ section {
 	}
 	section#pricing {
 		@extend .bg-secondary;
+		background-image: url('../images/cubes.svg');
 
 		.pricing-factor {
 			@extend .bg-white, .p-2, .flex-text-x;
