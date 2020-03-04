@@ -202,6 +202,25 @@ section {
 				h5 {
 					@extend .mb-0;
 				}
+
+				.profile-details {
+					display: flex;
+					justify-content: space-between;
+					align-items: flex-end;
+					flex-wrap: wrap;
+
+					small {
+						color: $color-h;
+					}
+				}
+			}
+
+			&:hover {
+				.content {
+					p {
+						color: $primary;
+					}
+				}
 			}
 		}
 	}
