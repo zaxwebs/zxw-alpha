@@ -1,4 +1,11 @@
 // UTILS
+@mixin bg-cover($path: false, $size: 'cover', $position: 'center') {
+	@if $path {
+		background-image: url($path);
+	}
+	background-size: $size;
+	background-position: $position;
+}
 
 .flex-xy {
 	display: flex;
@@ -119,6 +126,15 @@ section {
 	section#hero {
 		min-height: 65vh;
 	}
+	section#highlights {
+		.highlight-img-holder {
+			@include bg-cover('../images/highlights/bg.png');
+
+			img {
+				@extend .img-fluid;
+			}
+		}
+	}
 	section#pricing {
 		@extend .bg-secondary;
 		background-image: url('../images/cubes.svg');
@@ -126,6 +142,7 @@ section {
 		.pricing-factor {
 			@extend .bg-white, .p-2, .flex-text-x;
 			height: 100%;
+			border-left: 6px solid $primary;
 
 			i {
 				@extend .py-a;
@@ -136,6 +153,8 @@ section {
 			&:hover {
 				i {
 					color: $primary;
+					transform: rotate(25deg);
+					transition: transform 0.25s;
 				}
 			}
 
