@@ -1,9 +1,26 @@
 // BASE
-
+html {
+	font-size: $font-size-root;
+}
 // UTILS
+.flex-xy {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
+.flex-y {
+	display: flex;
+	align-items: center;
+}
+
+.py-a {
+	@extend .py-5;
+}
 // COMPONENTS
-
+.btn {
+	text-transform: uppercase;
+}
 // LAYOUT
 
 // PAGE(s)

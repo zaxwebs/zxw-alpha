@@ -1,0 +1,29 @@
+// color
+$color-a: #8e79fc;
+$color-b: #2b2b51;
+$color-c: #58678c;
+$color-d: #ff88e4;
+$color-e: #9eccfe;
+$color-d: #0fe2c1;
+
+$primary: $color-a;
+$secondary: $color-b;
+
+// typography
+$headings-color: $secondary;
+$headings-font-family: 'IBM Plex Sans', sans-serif;
+$headings-font-weight: 600;
+$body-color: $color-c;
+$font-family-sans-serif: 'Heebo', sans-serif;
+$font-size-root: 20px;
+$headings-margin-bottom: $font-size-root/1.25;
+
+//btn
+$input-btn-padding-y: 0.5rem;
+$input-btn-padding-x: 1.5rem;
+$input-btn-font-family: $headings-font-family;
+$input-btn-font-size: 0.75em;
+$btn-font-weight: $headings-font-weight;
+
+//general
+$border-radius: 0.1rem;
