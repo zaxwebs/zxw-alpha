@@ -98,13 +98,30 @@
 	position: relative;
 }
 
+body::-webkit-scrollbar {
+	width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+	background-color: $color-i;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: $primary;
+}
+
 html {
 	font-size: $font-size-root;
 	scroll-behavior: smooth;
 }
 
 section {
-	@extend .py-d;
+	@extend .py-c;
+
+	@include media-breakpoint-up(md) {
+		padding-top: $spacer * 4;
+		padding-bottom: $spacer * 4;
+	}
 }
 
 // COMPONENTS
@@ -127,12 +144,47 @@ section {
 		min-height: 65vh;
 	}
 
+	section#services {
+		.service {
+			display: flex;
+
+			.icon {
+				@extend .mb-1, .flex-y;
+				color: $color-h;
+				transition: color 0.25s;
+
+				i {
+					font-size: 3rem;
+				}
+			}
+
+			.content {
+				@extend .mb-1, .pl-4;
+
+				p {
+					@extend .mb-0;
+				}
+			}
+
+			&:hover {
+				.icon {
+					color: $color-f;
+				}
+			}
+		}
+	}
+
 	section#highlights {
 		.highlight-img-holder {
 			@include bg-cover('../images/highlights/bg.png');
 
 			img {
 				@extend .img-fluid;
+				transition: transform 0.25s;
+
+				&:hover {
+					transform: translateX(10px);
+				}
 			}
 		}
 	}
@@ -150,13 +202,13 @@ section {
 				@extend .py-a;
 				color: $color-h;
 				font-size: 2rem;
+				transition: transform 0.25s;
 			}
 
 			&:hover {
 				i {
 					color: $primary;
 					transform: rotate(25deg);
-					transition: transform 0.25s;
 				}
 			}
 

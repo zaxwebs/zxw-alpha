@@ -15,7 +15,11 @@ $secondary: $color-b;
 $theme-colors: (
 	'primary': $primary,
 	'secondary': $secondary,
-	'd': $color-d
+	'd': $color-d,
+	'success': $color-f,
+	'info': $color-e,
+	'warning': $color-g,
+	'danger': $color-d
 );
 
 // typography
