@@ -67,10 +67,11 @@
 .animated-gradient-bg {
 	background: linear-gradient(-45deg, $color-g, $color-d, $color-e, $color-f);
 	background-size: 400% 400%;
-	animation: animated-gradient 7.5s ease alternate infinite;
+	animation: animated-gradient 6s linear alternate infinite;
 }
 
 .bg-secondary {
+	background-color: $secondary;
 	color: $color-h;
 	h1,
 	h2,
@@ -136,7 +137,44 @@ section {
 .btn-d {
 	background-color: $color-d;
 }
+
 // LAYOUT
+
+// GENERAL
+
+section#pricing-factors {
+	@extend .bg-secondary;
+	background-image: url('../images/cubes.svg');
+
+	.pricing-factor {
+		@extend .bg-white, .p-2, .flex-text-x;
+		height: 100%;
+		border-left: 6px solid $primary;
+
+		i {
+			@extend .py-a;
+			color: $color-h;
+			font-size: 2rem;
+			transition: transform 0.25s;
+		}
+
+		&:hover {
+			i {
+				color: $primary;
+				transform: rotate(25deg);
+			}
+		}
+
+		p {
+			margin-bottom: 0.5rem;
+		}
+
+		small {
+			color: $color-h;
+			margin-bottom: 0.8rem;
+		}
+	}
+}
 
 // PAGE(s)
 #page-home {
@@ -185,40 +223,6 @@ section {
 				&:hover {
 					transform: translateX(10px);
 				}
-			}
-		}
-	}
-
-	section#pricing {
-		@extend .bg-secondary;
-		background-image: url('../images/cubes.svg');
-
-		.pricing-factor {
-			@extend .bg-white, .p-2, .flex-text-x;
-			height: 100%;
-			border-left: 6px solid $primary;
-
-			i {
-				@extend .py-a;
-				color: $color-h;
-				font-size: 2rem;
-				transition: transform 0.25s;
-			}
-
-			&:hover {
-				i {
-					color: $primary;
-					transform: rotate(25deg);
-				}
-			}
-
-			p {
-				margin-bottom: 0.5rem;
-			}
-
-			small {
-				color: $color-h;
-				margin-bottom: 0.8rem;
 			}
 		}
 	}
@@ -277,13 +281,50 @@ section {
 		}
 	}
 }
+#page-packages {
+	section#hero {
+		@extend .bg-secondary;
+	}
 
+	section#packages {
+		.row {
+			margin-top: -5rem;
+			@include media-breakpoint-up(md) {
+				margin-top: -7rem;
+			}
+		}
+
+		.package {
+			@extend .mb-4;
+			margin: 0.5rem;
+			border: 1px solid $primary;
+
+			h5 {
+				@extend .p-3, .pb-0, .mb-0, .bg-secondary, .text-white;
+			}
+
+			.content {
+				@extend .p-3;
+
+				.feature {
+					@extend .mb-2;
+					color: $color-h;
+				}
+
+				.price {
+					font-size: 2rem;
+					color: darken($color-f, 10%);
+				}
+			}
+		}
+	}
+}
 // ANIMATIONS
 @keyframes animated-gradient {
 	0% {
 		background-position: 0% 50%;
 	}
 	100% {
-		background-position: 100% 50%;
+		background-position: 100% 100%;
 	}
 }
