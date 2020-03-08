@@ -105,6 +105,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-track {
 	background-color: $color-i;
+	border-left: 1px solid $primary;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -301,6 +302,9 @@ section#pricing-factors {
 
 			h5 {
 				@extend .p-3, .pb-0, .mb-0, .bg-secondary, .text-white;
+				background-image: url('../images/dots-9.png');
+				background-repeat: no-repeat;
+				background-position: right;
 			}
 
 			.content {
