@@ -300,6 +300,18 @@ section#pricing-factors {
 			margin: 0.5rem;
 			border: 1px solid $primary;
 
+			.notification {
+				@extend .px-3;
+				padding: 2px;
+				font-size: 0.7rem;
+				position: absolute;
+				color: $white;
+				z-index: 10;
+				top: -0.7rem;
+				left: -1px;
+				background-color: $color-d;
+			}
+
 			h5 {
 				@extend .p-3, .pb-0, .mb-0, .bg-secondary, .text-white;
 				background-image: url('../images/dots-9.png');
