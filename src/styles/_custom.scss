@@ -139,6 +139,10 @@ section {
 	background-color: $color-d;
 }
 
+.btn-success {
+	color: $white;
+}
+
 // LAYOUT
 
 // GENERAL
@@ -282,6 +286,17 @@ section#pricing-factors {
 		}
 	}
 }
+
+#page-pricing {
+	section#pricing-factors {
+		color: $secondary;
+		h2 {
+			color: $secondary !important;
+		}
+		background-color: $color-i !important;
+	}
+}
+
 #page-packages {
 	section#hero {
 		@extend .bg-secondary;
@@ -296,7 +311,7 @@ section#pricing-factors {
 		}
 
 		.package {
-			@extend .mb-4;
+			@extend .mb-4, .bg-white;
 			margin: 0.5rem;
 			border: 1px solid $primary;
 
