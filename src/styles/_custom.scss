@@ -127,6 +127,7 @@ section {
 }
 
 // COMPONENTS
+
 .btn {
 	text-transform: uppercase;
 }
@@ -144,7 +145,21 @@ section {
 }
 
 // LAYOUT
+.navbar-blur {
+	background-color: rgba($white, 0.95) !important;
+	backdrop-filter: blur(10px);
+}
 
+.main {
+	margin-top: 70px; // navbar height
+}
+
+a.anchor {
+	display: block;
+	position: relative;
+	top: -70px; // navbar height
+	visibility: hidden;
+}
 // GENERAL
 
 section#pricing-factors {
@@ -314,6 +329,7 @@ section#pricing-factors {
 			@extend .mb-4, .bg-white;
 			margin: 0.5rem;
 			border: 1px solid $primary;
+			box-shadow: 0 3px 8px 8px rgba($secondary, 10%);
 
 			.indicator {
 				@extend .px-3;
@@ -344,6 +360,7 @@ section#pricing-factors {
 				}
 
 				.price {
+					margin-top: 2rem;
 					font-size: 2rem;
 					color: darken($color-f, 10%);
 				}
