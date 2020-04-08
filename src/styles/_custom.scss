@@ -1,376 +1,315 @@
 // UTILS
 @mixin bg-cover($path: false, $size: cover, $position: center center) {
-	@if $path {
-		background-image: url($path);
-	}
-	background-size: $size;
-	background-position: $position;
+  @if $path {
+    background-image: url($path);
+  }
+  background-size: $size;
+  background-position: $position;
 }
 
 .flex-xy {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .flex-y {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .flex-text-x {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 
 .pb-a {
-	padding-bottom: $spacer;
+  padding-bottom: $spacer;
 }
 
 .py-a {
-	padding-top: $spacer;
-	padding-bottom: $spacer;
+  padding-top: $spacer;
+  padding-bottom: $spacer;
 }
 
 .py-b {
-	padding-top: $spacer * 2;
-	padding-bottom: $spacer * 2;
+  padding-top: $spacer * 2;
+  padding-bottom: $spacer * 2;
 }
 
 .py-c {
-	padding-top: $spacer * 3;
-	padding-bottom: $spacer * 3;
+  padding-top: $spacer * 3;
+  padding-bottom: $spacer * 3;
 }
 
 .py-d {
-	padding-top: $spacer * 4;
-	padding-bottom: $spacer * 4;
+  padding-top: $spacer * 4;
+  padding-bottom: $spacer * 4;
 }
 
 .py-e {
-	padding-top: $spacer * 5;
-	padding-bottom: $spacer * 5;
+  padding-top: $spacer * 5;
+  padding-bottom: $spacer * 5;
 }
 
 .mw-lg {
-	max-width: 800px;
+  max-width: 800px;
 }
 
 .row-md-reverse {
-	@include media-breakpoint-up(md) {
-		flex-direction: row-reverse;
-	}
+  @include media-breakpoint-up(md) {
+    flex-direction: row-reverse;
+  }
 }
 
 .animated-gradient-bg {
-	background: linear-gradient(-45deg, $color-g, $color-d, $color-e, $color-f);
-	background-size: 400% 400%;
-	animation: animated-gradient 6s linear alternate infinite;
+  background: linear-gradient(-45deg, $color-g, $color-d, $color-e, $color-f);
+  background-size: 400% 400%;
+  animation: animated-gradient 6s linear alternate infinite;
 }
 
 .bg-secondary {
-	background-color: $secondary;
-	color: $color-h;
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		color: $white;
-	}
+  background-color: $secondary;
+  color: $color-h;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $white;
+  }
 }
 
 .bg-white {
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		color: $secondary;
-	}
-	color: $body-color;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $secondary;
+  }
+  color: $body-color;
 }
 // BASE
 * {
-	position: relative;
+  position: relative;
 }
 
 body::-webkit-scrollbar {
-	width: 10px;
+  width: 10px;
 }
 
 body::-webkit-scrollbar-track {
-	background-color: $color-i;
-	border-left: 1px solid $color-h;
+  background-color: $color-i;
+  border-left: 1px solid $color-h;
 }
 
 body::-webkit-scrollbar-thumb {
-	background-color: $primary;
+  background-color: $primary;
 }
 
 html {
-	font-size: $font-size-root;
-	scroll-behavior: smooth;
+  font-size: $font-size-root;
+  scroll-behavior: smooth;
 }
 
 section {
-	@extend .py-c;
+  @extend .py-c;
 
-	@include media-breakpoint-up(md) {
-		padding-top: $spacer * 4;
-		padding-bottom: $spacer * 4;
-	}
+  @include media-breakpoint-up(md) {
+    padding-top: $spacer * 4;
+    padding-bottom: $spacer * 4;
+  }
 }
 
 // COMPONENTS
 
 .btn {
-	text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .btn-animated {
-	@extend .text-white, .animated-gradient-bg;
+  @extend .text-white, .animated-gradient-bg;
 }
 
 .btn-d {
-	background-color: $color-d;
+  background-color: $color-d;
 }
 
 .btn-success {
-	color: $white;
+  color: $white;
 }
 
 // LAYOUT
 .navbar-blur {
-	background-color: rgba($white, 0.95) !important;
-	backdrop-filter: blur(10px);
-	box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.08);
-	font-size: 0.8rem;
+  background-color: rgba($white, 0.95) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.08);
+  font-size: 0.8rem;
 }
 
 // GENERAL
 
 section#pricing-factors {
-	@extend .bg-secondary;
-	background-image: url('../images/cubes.svg');
+  @extend .bg-secondary;
+  background-image: url('../images/cubes.svg');
 
-	.pricing-factor {
-		@extend .bg-white, .p-2, .flex-text-x;
-		height: 100%;
-		border-left: 6px solid $primary;
+  .pricing-factor {
+    @extend .bg-white, .p-2, .flex-text-x;
+    height: 100%;
+    border-left: 6px solid $primary;
 
-		i {
-			@extend .py-a;
-			color: $color-h;
-			font-size: 2rem;
-			transition: transform 0.25s;
-		}
+    i {
+      @extend .py-a;
+      color: $color-h;
+      font-size: 2rem;
+      transition: transform 0.25s;
+    }
 
-		&:hover {
-			i {
-				color: $primary;
-				transform: rotate(25deg);
-			}
-		}
+    &:hover {
+      i {
+        color: $primary;
+        transform: rotate(25deg);
+      }
+    }
 
-		p {
-			margin-bottom: 0.5rem;
-		}
+    p {
+      margin-bottom: 0.5rem;
+    }
 
-		small {
-			color: $color-h;
-			margin-bottom: 0.8rem;
-		}
-	}
+    small {
+      color: $color-h;
+      margin-bottom: 0.8rem;
+    }
+  }
 }
 
 // PAGE(s)
 #page-home {
-	section#hero {
-		min-height: 65vh;
-	}
+  section#hero {
+    min-height: 65vh;
+  }
 
-	section#services {
-		.service {
-			display: flex;
+  section#services {
+    .service {
+      display: flex;
 
-			.icon {
-				@extend .mb-1, .flex-y;
-				color: $color-h;
-				transition: color 0.25s;
+      .icon {
+        @extend .mb-1, .flex-y;
+        color: $color-h;
+        transition: color 0.25s;
 
-				i {
-					font-size: 3rem;
-				}
-			}
+        i {
+          font-size: 3rem;
+        }
+      }
 
-			.content {
-				@extend .mb-1, .pl-4;
+      .content {
+        @extend .mb-1, .pl-4;
 
-				p {
-					@extend .mb-0;
-				}
-			}
+        p {
+          @extend .mb-0;
+        }
+      }
 
-			&:hover {
-				.icon {
-					color: $color-f;
-				}
-			}
-		}
-	}
+      &:hover {
+        .icon {
+          color: $color-f;
+        }
+      }
+    }
+  }
 
-	section#highlights {
-		.highlight-img-holder {
-			@include bg-cover('../images/highlights/bg.png');
+  section#highlights {
+    .highlight-img-holder {
+      @include bg-cover('../images/highlights/bg.png');
 
-			img {
-				@extend .img-fluid;
-				transition: transform 0.25s;
+      img {
+        @extend .img-fluid;
+        transition: transform 0.25s;
 
-				&:hover {
-					transform: translateX(10px);
-				}
-			}
-		}
-	}
+        &:hover {
+          transform: translateX(10px);
+        }
+      }
+    }
+  }
 
-	section#testimonials {
-		.testimonial {
-			@extend .p-3, .m-2, .mt-3;
-			box-shadow: 0 3px 8px 8px $color-i;
-			height: calc(100% - 1.5rem);
+  section#testimonials {
+    .testimonial {
+      @extend .p-3, .m-2, .mt-3;
+      box-shadow: 0 3px 8px 8px $color-i;
+      height: calc(100% - 1.5rem);
 
-			.profile-image-holder {
-				@extend .mb-3;
-				margin-top: -2rem;
-				width: 60px;
-				height: 60px;
-				background-color: $primary;
+      .profile-image-holder {
+        @extend .mb-3;
+        margin-top: -2rem;
+        width: 60px;
+        height: 60px;
+        background-color: $primary;
 
-				img {
-					@extend .img-fluid;
-				}
-			}
+        img {
+          @extend .img-fluid;
+        }
+      }
 
-			.content {
-				display: flex;
-				height: 80%;
-				flex-direction: column;
-				justify-content: space-between;
+      .content {
+        display: flex;
+        height: 80%;
+        flex-direction: column;
+        justify-content: space-between;
 
-				p {
-					@extend .mb-2;
-				}
+        p {
+          @extend .mb-2;
+        }
 
-				h5 {
-					@extend .mb-0;
-				}
+        h5 {
+          @extend .mb-0;
+        }
 
-				.profile-details {
-					display: flex;
-					justify-content: space-between;
-					align-items: flex-end;
-					flex-wrap: wrap;
+        .profile-details {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          flex-wrap: wrap;
 
-					small {
-						color: $color-h;
-					}
-				}
-			}
+          small {
+            color: $color-h;
+          }
+        }
+      }
 
-			&:hover {
-				.content {
-					p {
-						color: $primary;
-					}
-				}
-			}
-		}
-	}
+      &:hover {
+        .content {
+          p {
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
 }
 
 #page-pricing {
-	section#pricing-factors {
-		color: $secondary;
-		h2 {
-			color: $secondary !important;
-		}
-		background-color: $color-i !important;
-	}
+  section#pricing-factors {
+    color: $secondary;
+    h2 {
+      color: $secondary !important;
+    }
+    background-color: $color-i !important;
+  }
 }
 
-#page-packages {
-	section#hero {
-		@extend .bg-secondary;
-	}
-
-	section#packages {
-		.row {
-			margin-top: -5rem;
-			@include media-breakpoint-up(md) {
-				margin-top: -7rem;
-			}
-		}
-
-		.package {
-			@extend .mb-4, .bg-white;
-			margin: 0.5rem;
-			border: 1px solid $primary;
-			box-shadow: 0 3px 8px 8px rgba($secondary, 10%);
-			transition: all 0.2s;
-
-			&:hover {
-				transform: translateY(5px);
-			}
-
-			.indicator {
-				@extend .px-3;
-				padding: 2px;
-				font-size: 0.7rem;
-				position: absolute;
-				color: $white;
-				z-index: 10;
-				top: -0.7rem;
-				left: -1px;
-				background-color: $color-d;
-			}
-
-			h6 {
-				@extend .p-3, .pb-0, .mb-0, .bg-secondary, .text-white;
-				background-image: url('../images/dots-9.png');
-				background-repeat: no-repeat;
-				background-position: right;
-			}
-
-			.content {
-				@extend .p-3;
-
-				.feature {
-					@extend .mb-2;
-					color: $color-h;
-					font-size: 0.8rem;
-				}
-
-				.price {
-					margin-top: 2rem;
-					font-size: 2rem;
-					color: darken($color-f, 10%);
-				}
-			}
-		}
-	}
-}
 // ANIMATIONS
 @keyframes animated-gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	100% {
-		background-position: 100% 100%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
